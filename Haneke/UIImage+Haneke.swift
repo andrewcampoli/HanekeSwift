@@ -28,9 +28,9 @@ extension UIImage {
         }
     }
     
-    func hnk_data(compressionQuality: CGFloat = 1.0) -> Data! {
+    func hnk_data(compressionQuality: Float = 1.0) -> Data! {
         let hasAlpha = self.hnk_hasAlpha()
-        let data = hasAlpha ? self.pngData() : self.jpegData(compressionQuality: compressionQuality)
+        let data = hasAlpha ? self.pngData() : self.jpegData(compressionQuality: CGFloat(compressionQuality))
         return data
     }
     

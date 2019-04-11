@@ -15,7 +15,7 @@ public extension UIButton {
         assert(bounds.size.width > 0 && bounds.size.height > 0, "[\(Mirror(reflecting: self).description) \(#function)]: UIButton size is zero. Set its frame, call sizeToFit or force layout first. You can also set a custom format with a defined size if you don't want to force layout.")
             let contentRect = self.contentRect(forBounds: bounds)
             let imageInsets = self.imageEdgeInsets
-        let scaleMode = self.contentHorizontalAlignment != UIControl.ContentHorizontalAlignment.fill || self.contentVerticalAlignment != UIControl.ContentVerticalAlignment.fill ? ImageResizer.ScaleMode.AspectFit : ImageResizer.ScaleMode.Fill
+            let scaleMode = self.contentHorizontalAlignment != UIControl.ContentHorizontalAlignment.fill || self.contentVerticalAlignment != UIControl.ContentVerticalAlignment.fill ? ImageResizer.ScaleMode.AspectFit : ImageResizer.ScaleMode.Fill
             let imageSize = CGSize(width: contentRect.width - imageInsets.left - imageInsets.right, height: contentRect.height - imageInsets.top - imageInsets.bottom)
             
             return HanekeGlobals.UIKit.formatWithSize(imageSize, scaleMode: scaleMode, allowUpscaling: scaleMode == ImageResizer.ScaleMode.AspectFit ? false : true)
